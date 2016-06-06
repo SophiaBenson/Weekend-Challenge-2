@@ -1,6 +1,7 @@
 console.log("bird is primed and ready");
 var classJ;
 var classIndex = 0;
+var output= [];
 // var classSwitch;
 $(document).ready(function() {
   $('#ajaxButton' ).click( function(){
@@ -29,6 +30,21 @@ $('#header').append("<p>Nu Cohort</p>");
   $('#classmateHolder').text(classJ.students[classIndex].first_name + " " + classJ.students[classIndex].last_name);
   $('#classmateInfo').text(classJ.students[classIndex].city + " " + classJ.students[classIndex].shoutout);
 $('#currentClassmate').text(Number(classIndex + 1) + "/20 Newbs");
+$('#selection').append("<option value='classJ.students[classIndex].first_name'>wuh wuh</option>");
+// $('#selection').append($('<option>', {value: key}
+// .text(value)));
+///attempt 1
+// $.each(classJ.students[classIndex], function(key, value){
+//   $('#selector').append($('<option></option>'.attr("value", key)
+//   .text(value)));
+///attempt 2
+// $.each(classj.students[classIndex].first_name, function(key, value)
+// {
+//   output.push('<option value="' + key +'"> ' + valye + '</option>');
+// });
+// $('#selector').html(output.join(''));
+var imgUrl = "http://henryhall.github.io/Weekend-Project-2/Nu/" + classJ.student.first_name + classJ.student.last_name + ".jpg";
+$('#classHead').attr('src', imgUrl);
 }
 //next classmate button function
 // $('#nextButton').click(function(){
@@ -51,6 +67,8 @@ $('#currentClassmate').text(Number(classIndex + 1) + "/20 Newbs");
 // console.log("next button clicked");
 //   });
 
+//load pictures
+
 
 $('#nextButton').click(function(){
   console.log("next button clicked");
@@ -68,5 +86,8 @@ $('#previousButton').click(function(){
     classIndex--;
   takeOff();
 });
+// function populate(selector){
+  // $(selector).append(classJ.students);
+// }
 });
 // classSwitch =
